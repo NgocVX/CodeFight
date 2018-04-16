@@ -1,6 +1,27 @@
 package ngocvx.codefight.smoothsailing;
 
 public class ReverseParentheses {
+    static String reverseParenthesesGood(String s) {
+
+        int bracketStart, bracketEnd;
+        StringBuilder stringBuilder;
+
+        bracketStart = s.lastIndexOf("(");
+
+        while (bracketStart != -1) {
+            bracketEnd = s.indexOf(")", bracketStart);
+            String temp = s.substring(bracketStart+1, bracketEnd);
+            temp = reverseString(temp);
+
+            stringBuilder = new StringBuilder(s);
+            stringBuilder.replace(bracketStart, bracketEnd+1, temp);
+            s = stringBuilder.toString();
+            bracketStart = s.lastIndexOf("(");
+        }
+
+        return s;
+    }
+
     static String reverseParentheses (String s) {
         System.out.println(s);
         /***
@@ -62,7 +83,11 @@ public class ReverseParentheses {
 
     public static void main(String[] args) {
         System.out.println(reverseParentheses("a(b(ef)c)d"));
+        System.out.println("--");
+        System.out.println(reverseParenthesesGood("a(b(ef)c)d"));
         System.out.println("-----------------");
         System.out.println(reverseParentheses("abc(cba)ab(bac)c"));
+        System.out.println("--");
+        System.out.println(reverseParenthesesGood("abc(cba)ab(bac)c"));
     }
 }
