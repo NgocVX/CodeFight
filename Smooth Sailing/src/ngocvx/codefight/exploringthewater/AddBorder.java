@@ -1,8 +1,11 @@
 package ngocvx.codefight.exploringthewater;
 
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
+
+/**
+ * Given a rectangular matrix of characters,
+ * add a border of asterisks(*) to it.
+ */
 
 public class AddBorder {
 
@@ -26,7 +29,7 @@ public class AddBorder {
         borderPicture[0] = boder;
         borderPicture[picture.length + 1] = boder;
         */
-        int newLength = picture[0].length() +2;
+        int newLength = picture[0].length()+2;
         char[] line = new char[newLength];
         Arrays.fill(line, '*');
 

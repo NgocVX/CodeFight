@@ -1,5 +1,9 @@
 package ngocvx.codefight.exploringthewater;
 
+/**
+ * Given a string,
+ * find out if its characters can be rearranged to form a palindrome.
+ */
 public class PalindromeRearranging {
 
     static boolean palindromeRearranging(String inputString) {
